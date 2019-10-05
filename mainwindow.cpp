@@ -9,31 +9,59 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    mThread = new MyThread(this);
-    connect(mThread,SIGNAL(NumberChanged(int)),this,SLOT(onNumberChanged(int)));
+
+    change = false;
+
+    scene = new QGraphicsScene(this);
+    scene2 = new QGraphicsScene(this);
+    initScene(change);
+
+
+    elipse = scene->addEllipse(10,10,100,100);
+    rect = scene2->addRect(300,300,25,150);
+    rect = scene->addRect(300,300,25,150);
+
+
+
+
 }
+
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
 
+
 void MainWindow::on_actionShow_memory_usage_triggered()
 {
     QMessageBox::information(this,"Memory usage","showingcontent...");
 }
 
-void MainWindow::onNumberChanged(int Number){
+void MainWindow::on_actionChange_mode_triggered()
+{
 
-    ui->label->setText(QString::number(Number));
+    QMessageBox::question(this,"Change mode","Do you want to change the actual mode?",
+                          QMessageBox::Yes | QMessageBox::No);
 }
 
-void MainWindow::on_pushButton_clicked()
-{
-    mThread->start();
+void MainWindow::initScene(bool change){
+
+    if(change == true){
+
+        ui->graphicsView->setScene(scene2);
+    }else{
+
+        ui->graphicsView->setScene(scene);
+    }
+
+   // *change = nullptr;
+
 }
 
-void MainWindow::on_pushButton_2_clicked()
+
+void MainWindow::on_actionInfinite_scroll_triggered()
 {
-    mThread->Stop = true;
+    change=true;
+    initScene(change);
 }

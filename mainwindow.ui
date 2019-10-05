@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QGraphicsView" name="graphicsView">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>256</width>
+      <height>192</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="graphicsView_2">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>20</y>
+      <width>256</width>
+      <height>192</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuTecFlix">
+    <property name="title">
+     <string>TecFlix</string>
+    </property>
+    <widget class="QMenu" name="menuChange_mode">
+     <property name="title">
+      <string>Change mode</string>
+     </property>
+     <property name="icon">
+      <iconset resource="res.qrc">
+       <normaloff>:/Images/scene_1351588.png</normaloff>:/Images/scene_1351588.png</iconset>
+     </property>
+     <addaction name="actionInfinite_scroll"/>
+     <addaction name="actionRegular_pagination"/>
+     <addaction name="actionNo_pagination"/>
+    </widget>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+    <addaction name="menuChange_mode"/>
+    <addaction name="actionShow_memory_usage"/>
+   </widget>
+   <addaction name="menuTecFlix"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionChange_mode"/>
+   <addaction name="separator"/>
+   <addaction name="actionShow_memory_usage"/>
+   <addaction name="separator"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionInfinite_scroll">
+   <property name="text">
+    <string>Infinite scroll</string>
+   </property>
+  </action>
+  <action name="actionRegular_pagination">
+   <property name="text">
+    <string>Regular pagination</string>
+   </property>
+  </action>
+  <action name="actionShow_memory_usage">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/Images/memory-svg-png-icon-free-download-360787-onlinewebfontscom-memory-png-980_980.png</normaloff>:/Images/memory-svg-png-icon-free-download-360787-onlinewebfontscom-memory-png-980_980.png</iconset>
+   </property>
+   <property name="text">
+    <string>Show memory usage</string>
+   </property>
+  </action>
+  <action name="actionNo_pagination">
+   <property name="text">
+    <string>No pagination</string>
+   </property>
+  </action>
+  <action name="actionChange_mode">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/Images/scene_1351588.png</normaloff>:/Images/scene_1351588.png</iconset>
+   </property>
+   <property name="text">
+    <string>Change mode</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
+ <connections/>
+</ui>

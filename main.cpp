@@ -10,13 +10,9 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    MyThread mThread;
-
-    mThread.start();
-
-
 
     MainWindow w;
+    //w.buttonsInit();
     w.setWindowTitle("TecFlix");
     w.show();
 
